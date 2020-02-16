@@ -1,0 +1,20 @@
+files.uploadDir: E:/uploads/
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 200MB
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: ["classpath:/META-INF/resources/","classpath:/resources/","classpath:/static/","classpath:/public/","file:${files.uploadDir}"]
+  thymeleaf:
+    cache: false
+    mode: HTML
+jodconverter:
+  local:
+    enabled: true
+    max-tasks-per-process: 10
+    port-numbers: 8100
+    office-home: E:/Program Files/OpenOffice 4.1.7/openofficedata
