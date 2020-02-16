@@ -43,7 +43,6 @@ public class FileController {
         System.out.println(fileId);
         return String.valueOf(fileHandleDao.filedownloadhandle(fileId,response));
     }
-
 //    @RequestMapping("/preview")
 //    public String previewfile(){
 //        String s=fileHandleDao.generatePDF("20200216","1581862298196_849_win10锁屏.docx","docx");
