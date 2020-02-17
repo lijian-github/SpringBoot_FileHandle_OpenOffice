@@ -1,20 +1,14 @@
 package com.ljnt.fileio.controller;
 
 import com.ljnt.fileio.service.FileHandleDao;
-import com.ljnt.fileio.service.impl.FileHandleImpl;
 import org.jodconverter.DocumentConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -25,8 +19,6 @@ import java.util.List;
  */
 @Controller
 public class FileController {
-    @Autowired
-    private DocumentConverter converter;
     @Autowired
     private FileHandleDao fileHandleDao;
     @PostMapping("/upload")

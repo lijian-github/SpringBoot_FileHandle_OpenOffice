@@ -72,7 +72,8 @@ public class FileHandleImpl implements FileHandleDao {
                 String fileUrl = rootUrl+fileAdd+"/"+realfileName;
                 File dest = new File(path,realfileName);
                 file.transferTo(dest);// 文件写入
-                FileMsg fileMsg=new FileMsg(fileName,fileId,fileUrl,fileType,fileSize,uploadTime);
+                FileMsg fileMsg=new FileMsg(fileName,fileId,fileUrl,fileType,fileSize,uploadTime);//返回文件消息
+                //office文件转pdf
                 String preview=generatePDF(fileAdd,realfileName,fileType);
                 if (preview!=null){
                     fileMsg.setPreviewUrl(rootUrl+"pdf/web/viewer.html?file="+preview);
@@ -157,7 +158,7 @@ public class FileHandleImpl implements FileHandleDao {
         if (isOfficeFile(fileType)) {
             File oldfile=new File(uploadDir+File.separator+fileAdd+File.separator,realfileName);
             if (fileType.toLowerCase().equals("pdf")){//本身是pdf不转
-                return fileAdd+"/"+realfileName;
+                return "/"+fileAdd+"/"+realfileName;
             }else if (fileType.toLowerCase().equals("txt")){
                 if (!tranTxt(oldfile)){
                     return null;
@@ -168,8 +169,8 @@ public class FileHandleImpl implements FileHandleDao {
             if (!newfile.getParentFile().exists()){
                 newfile.getParentFile().mkdirs();
             }
-            System.out.println(oldfile.getPath()+"????"+newfile.getPath());
             try {
+                //转换核心代码
                 converter.convert(oldfile).to(newfile).execute();
             } catch (Exception e) {
                 e.printStackTrace();
