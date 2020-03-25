@@ -77,6 +77,8 @@ public class FileHandleImpl implements FileHandleDao {
                 String preview=generatePDF(fileAdd,realfileName,fileType);
                 if (preview!=null){
                     fileMsg.setPreviewUrl(rootUrl+"pdf/web/viewer.html?file="+preview);
+                }else {
+                    fileMsg.setPreviewUrl(fileUrl);
                 }
                 fileMsgArrayList.add(fileMsg);
             }

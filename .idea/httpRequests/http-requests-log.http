@@ -1,0 +1,108 @@
+POST http://localhost:8080/upload
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+<> 2020-03-25T042454.500.json
+
+###
+
+POST http://localhost:8080/upload
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+###
+
+POST http://localhost:8080/upload
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+<> 2020-03-25T042127.200.json
+
+###
+
+POST http://localhost:8080/upload
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+###
+
+POST http://localhost:8080/upload
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+<> 2020-03-25T042122.200.json
+
+###
+
+POST http://localhost:8080/upload
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+<> 2020-03-25T041954.200.json
+
+###
+
+POST http://localhost:8080/upload?name=李建
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+<> 2020-03-25T041700.200.json
+
+###
+
+POST http://localhost:8080/resources?name=李建
+Accept: */*
+Cache-Control: no-cache
+
+--null
+
+
+< C:\Users\lijian\Desktop\BIC.txt
+--null--
+
+<> 2020-03-25T041647.404.json
+
+###
+

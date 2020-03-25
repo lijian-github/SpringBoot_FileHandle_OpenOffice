@@ -21,12 +21,16 @@ import java.util.List;
 public class FileController {
     @Autowired
     private FileHandleDao fileHandleDao;
-    @PostMapping("/upload")
+    @PostMapping(value = "/upload", headers = "content-type=multipart/form-data")
     @ResponseBody
-    public Object uploadfile(HttpServletRequest request){
-        MultipartHttpServletRequest multipartHttpServletRequest= (MultipartHttpServletRequest) request;
-        List<MultipartFile> files=multipartHttpServletRequest.getFiles("file");
-        return fileHandleDao.fileuploadhandle(files,request);
+    public Object uploadfile(List<MultipartFile> file,HttpServletRequest request){
+//        MultipartHttpServletRequest multipartHttpServletRequest= (MultipartHttpServletRequest) request;
+//        List<MultipartFile> files=multipartHttpServletRequest.getFiles("file");
+//        System.out.println(name);
+        if (file!=null){
+            return fileHandleDao.fileuploadhandle(file,request);
+        }
+        return null;
     }
 
     @GetMapping("/download/{fileId}")
